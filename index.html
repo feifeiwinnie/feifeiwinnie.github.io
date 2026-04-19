@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>菲菲</title>
+  </head>
+  <body>
+    <h1>这是 菲菲 的组织首页</h1>
+
+    <!-- 下面这部分是 Coze Web SDK 的安装代码 -->
+    <div id="app"></div>
+    <script type="text/javascript">
+      var webSdkScript = document.createElement('script');
+      webSdkScript.src = 'https://lf-cdn.coze.cn/obj/unpkg/flow-platform/builder-web-sdk//dist/umd/index.js';
+      document.head.appendChild(webSdkScript);
+      webSdkScript.onload = function () {
+        new CozeWebSDK.AppWebSDK({
+          "token": "pat_A4IahcaeA2QOtYcBGRBqqGMUYTE3EaKHPrXF1p4sHYW2OOTNdZYavYNaoFBqGVoM",   // ⚠️ 把这里的 pat_你的真实token 换成实际的值
+          "appId": "7628783408080699430",
+          "container": "#app",
+          "userInfo": {
+            "id": "",
+            "url": "",
+            "nickname": "User"
+          }
+        });
+      }
+    </script>
+  </body>
+</html>
