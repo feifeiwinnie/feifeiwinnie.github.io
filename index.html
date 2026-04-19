@@ -3,27 +3,25 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>菲菲</title>
+    <title>我的Coze机器人</title>
+    <style>
+        html, body { height: 100%; margin: 0; }
+        .coze-app-sdk { box-sizing: border-box; padding: 4px; }
+    </style>
   </head>
   <body>
+    
     <h1>Coze 应用应该出现在下面</h1>
-    <div id="app"></div>
-    <script type="text/javascript">
-      var webSdkScript = document.createElement('script');
-      webSdkScript.src = 'https://lf-cdn.coze.cn/obj/unpkg/flow-platform/builder-web-sdk/dist/umd/index.js';
-      document.head.appendChild(webSdkScript);
-      webSdkScript.onload = function () {
-        new CozeWebSDK.AppWebSDK({
-          "token": "pat_A4IahcaeA2QOtYcBGRBqqGMUYTE3EaKHPrXF1p4sHYW2OOTNdZYavYNaoFBqGVoM",  
-          "appId": "7628783408080699430",
-          "container": "#app",
-          "userInfo": {
-            "id": "",
-            "url": "",
-            "nickname": "User"
-          }
+    <div id='app'></div>
+    <script src="https://lf-cdn.coze.cn/obj/unpkg/flow-platform/builder-web-sdk/0.1.0/dist/umd/index.js"></script>
+    <script>
+        const cozeWebSDK = new CozeWebSDK.AppWebSDK({
+            token: 'pat_A4IahcaeA2QOtYcBGRBqqGMUYTE3EaKHPrXF1p4sHYW2OOTNdZYavYNaoFBqGVoM',
+            appId: '7628783408080699430',
+            container: '#app',
+            userInfo: { id: 'user_123', nickname: '访客' },
+            ui: { className: 'coze-app-sdk' }
         });
-      }
     </script>
   </body>
 </html>
