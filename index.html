@@ -5,8 +5,43 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>我的Coze机器人</title>
     <style>
-        html, body { height: 100%; margin: 0; }
-        .coze-app-sdk { box-sizing: border-box; padding: 4px; }
+        /* 基础样式：让页面和 body 撑满全屏 */
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* 页面布局：使用 flex 让内容垂直排列 */
+        body {
+            display: flex;
+            flex-direction: column;
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        /* 标题样式，留出一些呼吸空间 */
+        h1 {
+            text-align: center;
+            margin: 20px 0;
+            font-size: 1.5rem;
+            color: #333;
+        }
+
+        /* 关键：为 Coze 应用容器设置固定高度（例如 600px） */
+        /* 你也可以根据需要改为 height: 70vh; 或 height: 80%; */
+        #app {
+            width: 100%;
+            height: 600px;        /* 固定高度 600 像素，可根据需要调整 */
+            /* 如果希望自适应屏幕高度，可以用下面这行（取消注释并注释上面一行） */
+            /* height: 70vh; */   
+            flex-shrink: 0;       /* 防止 flex 压缩容器高度 */
+        }
+
+        /* SDK 内部 iframe 的额外样式（可选） */
+        .coze-app-sdk {
+            box-sizing: border-box;
+            padding: 4px;
+        }
     </style>
   </head>
   <body>
